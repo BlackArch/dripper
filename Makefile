@@ -3,11 +3,8 @@ RM = rm -f
 CFLAGS = -Wall -march=native -O2 -fomit-frame-pointer -funroll-loops -fopenmp
 PROJ = dripper
 
-php_mt_seed: php_mt_seed.c
+dripper: dripper.c
 	$(CC) $(CFLAGS) $< -o $@
-
-mic:
-	$(MAKE) CC=icc CFLAGS='-mmic -O3 -openmp'
 
 clean:
 	$(RM) $(PROJ)
